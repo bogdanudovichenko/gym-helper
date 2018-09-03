@@ -1,0 +1,13 @@
+page-home {
+    .grid,
+    .row {
+        // Force grid to fill height of content as this is not set by default
+        height: 100%;
+    }
+
+    button.camera-btn {
+        height: 70px;
+        width: 100px;
+        font-size: 35px;
+    }
+}
