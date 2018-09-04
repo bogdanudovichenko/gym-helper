@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera'
+import { VideoPage } from '../video/video';
 
 
 @IonicPage()
@@ -10,15 +11,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera'
 })
 export class CameraPage {
 
-  base64Image: string = null;
-
-  constructor(private camera: Camera) {
+  constructor(private camera: Camera, private navCtrl: NavController) {
   }
 
   ionViewDidLoad() {
-
-    this.base64Image = null;
-
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
@@ -29,8 +25,8 @@ export class CameraPage {
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-      
+      const base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.navCtrl.push(VideoPage);
     }, (err) => {
 
     });

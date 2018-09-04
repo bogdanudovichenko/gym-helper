@@ -8,6 +8,8 @@ import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CameraPageModule } from '../pages/camera/camera.module';
+import { VideoPage } from '../pages/video/video';
+import { VideoPageModule } from '../pages/video/video.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { CameraPageModule } from '../pages/camera/camera.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CameraPageModule
+    CameraPageModule,
+    VideoPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    VideoPage,
   ],
   providers: [
     StatusBar,

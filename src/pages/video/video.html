@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="videowrapper" *ngIf="generateVideoUrl()">
+      <iframe width="100%" [src]="generateVideoUrl()" frameborder="0" allowfullscreen></iframe>
+    </div>
+</ion-content>
