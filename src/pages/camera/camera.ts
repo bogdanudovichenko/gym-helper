@@ -26,7 +26,8 @@ export class CameraPage {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
       const base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.navCtrl.push(VideoPage);
+      console.log(base64Image);
+      this.navCtrl.push(VideoPage, { base64Image });
     }, (err) => {
 
     });
